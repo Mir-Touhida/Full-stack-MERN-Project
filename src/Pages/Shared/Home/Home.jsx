@@ -12,7 +12,7 @@ const Home = () => {
             <Banner></Banner>
             <HowWorks></HowWorks>
             <CourseDetails></CourseDetails>
-            
+            <div className="container mx-auto min-h-screen p-10"></div>
             <Footer></Footer>
         </div>
     );

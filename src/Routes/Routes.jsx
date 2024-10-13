@@ -3,8 +3,12 @@ import {
 import Main from "../Layout/Main";
 import Home from "../Pages/Shared/Home/Home";
 import Login from "../Pages/Login/Login";
-import CourseDetail from "../Pages/Shared/CourseDetail/CourseDetail";
+
 import Register from "../Pages/Register/Register";
+import CourseDetails from "../Pages/Shared/CourseDetails/CourseDetails";
+import Details from "../Pages/Shared/ProductDetails/Details";
+import PrivateRoute from "./PrivateRoute";
+
   const routes = createBrowserRouter([
     {
       path:"/",
@@ -16,8 +20,15 @@ import Register from "../Pages/Register/Register";
       element: <Home></Home>,
       },
       {
-        path: "/courseDetail",
-        element: <CourseDetail></CourseDetail>,
+        path:"/pDetails:id",
+        element: <PrivateRoute><Details></Details></PrivateRoute>,
+        loder: ({ params }) =>
+        fetch('http://localhost:5000/courseDetails/${params.course_id} '),
+        
+      },
+      {
+        path: "/CourseDetails",
+        element: <CourseDetails></CourseDetails>,
       },
       
       {

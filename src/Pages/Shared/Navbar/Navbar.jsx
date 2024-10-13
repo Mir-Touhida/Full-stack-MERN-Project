@@ -1,14 +1,28 @@
-import { Link, NavLink } from "react-router-dom";
-
+import { useContext } from "react";
+import { Link, NavLink, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../../Provider/AuthProvider";
+import userPic from "../../../assets/user.png";
 
 const Navbar = () => {
+  const {user, logOut}= useContext(AuthContext);
+  const navigate = useNavigate();
+
+  const handleSignOut = () => {
+    logOut()
+      .then(() => {
+        navigate("/login");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   const navlink =
    <>
    <li>
     <NavLink to='/'>Home</NavLink>
     </li>
     <li>
-    <NavLink to = '/courseDetail'>Products</NavLink>
+    <NavLink to = '/CourseDetails'>Products</NavLink>
     </li>
   </>
     return (
@@ -36,17 +50,33 @@ const Navbar = () => {
         {navlink}
       </ul>
     </div>
-    <img src="https://live.staticflickr.com/65535/52412638962_12e932256a_o.png" alt="logo" srcset="" className="w-10" />
+    <img src="https://live.staticflickr.com/65535/52412638962_12e932256a_o.png" alt="logo" srcSet="" className="w-10" />
    <span> <a className="btn btn-ghost text-2xl font-bold">JSAcademy</a></span>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
       {navlink}
     </ul>
+    
   </div>
-  <div className="navbar-end">
-  <NavLink to="/login"><button className="btn btn-outline btn-accent">Login</button></NavLink>
-  </div>
+  
+    {user ? (
+      
+        <div className="navbar-end">
+          {user && <span className="text-white mr-3">{user.displayName}</span>} 
+        <div className="w-10 rounded-full mr-2">
+            <img alt="User" src={userPic} />
+          </div>
+      <button 
+      onClick={handleSignOut}
+       className="btn btn-outline btn-accent">Logout</button>
+      </div>
+      ) : (
+        <div className="navbar-end">
+        <NavLink to="/login"><button className="btn btn-outline btn-accent">Login</button></NavLink>
+        </div>
+      )
+    }
 </div>
         </div>
     );
