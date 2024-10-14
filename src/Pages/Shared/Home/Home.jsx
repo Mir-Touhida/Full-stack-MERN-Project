@@ -1,3 +1,4 @@
+import Contact from "../../Contact Us/Contact";
 import Banner from "../Banner/Banner";
 import CourseDetails from "../CourseDetails/CourseDetails";
 import Footer from "../Footer/Footer";
@@ -12,7 +13,7 @@ const Home = () => {
             <Banner></Banner>
             <HowWorks></HowWorks>
             <CourseDetails></CourseDetails>
-            <div className="container mx-auto min-h-screen p-10"></div>
+            <Contact></Contact>
             <Footer></Footer>
         </div>
     );
