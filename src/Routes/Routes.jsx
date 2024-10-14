@@ -20,10 +20,16 @@ import PrivateRoute from "./PrivateRoute";
       element: <Home></Home>,
       },
       {
-        path:"/pDetails:id",
-        element: <PrivateRoute><Details></Details></PrivateRoute>,
-        loder: ({ params }) =>
-        fetch('http://localhost:5000/courseDetails/${params.course_id} '),
+        path:"/pDetails/:id",
+        element: (
+        <PrivateRoute>
+          <Details></Details>
+        </PrivateRoute>
+          ),
+        loader: ({ params }) =>
+        fetch(
+          `http://localhost:5000/courseDetails/${params.id}`
+        ),
         
       },
       {

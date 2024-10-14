@@ -16,7 +16,7 @@ const CourseDetail = ({ courseDetail }) => {
                     <h2 className="card-title text-pink-500">{courseDetail.title}</h2>
                     <p>Duration of this course is {courseDetail.duration} and this course is for {courseDetail.level}</p>
                     <div className="card-actions justify-end">
-                        <NavLink to={`/details/${course_id}`}>
+                        <NavLink to={`/pDetails/${course_id}`}>
                         <button className="btn btn-active btn-secondary">View Details</button>
                         </NavLink>
                     </div>
