@@ -22,11 +22,11 @@ const Navbar = () => {
     <NavLink to='/'>Home</NavLink>
     </li>
     <li>
-    <NavLink to = '/CourseDetails'>Products</NavLink>
+    <NavLink to = '/CourseDetails'>All Courses</NavLink>
     </li>
   </>
     return (
-        <div className="w-full bg-base-200"> 
+        <div className="container mx-auto font-bold bg-base-200"> 
           <div className="navbar">
   <div className="navbar-start">
     <div className="dropdown">
@@ -50,8 +50,8 @@ const Navbar = () => {
         {navlink}
       </ul>
     </div>
-    <img src="https://live.staticflickr.com/65535/52412638962_12e932256a_o.png" alt="logo" srcSet="" className="w-10" />
-   <span> <a className="btn btn-ghost text-2xl font-bold">JSAcademy</a></span>
+    <img src="logo.png" alt="logo" srcSet="" className="w-10" />
+   <span> <a className="btn btn-ghost text-2xl font-bold">ZsAcademy</a></span>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
@@ -72,7 +72,7 @@ const Navbar = () => {
        className="btn btn-outline btn-accent">Logout</button>
       </div>
       ) : (
-        <div className="navbar-end">
+        <div className="navbar-end flex justify-end items-center text-sm">
         <NavLink to="/login"><button className="btn btn-outline btn-accent">Login</button></NavLink>
         </div>
       )

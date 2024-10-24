@@ -14,9 +14,12 @@ const CourseDetails = () => {
         .then((data)=>setcourseDetails(data));
     },[]);
     console.log(courseDetails)
+    
     return (
        
         <div>
+            
+            <div>
             
             <div className="font-bold text-3xl text-center m-6">Course Details</div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-20">      
@@ -25,6 +28,7 @@ const CourseDetails = () => {
                 <CourseDetail key={courseDetail._id} courseDetail={courseDetail}> 
                 </CourseDetail>))
             }
+        </div>
         </div>
         </div>
     );

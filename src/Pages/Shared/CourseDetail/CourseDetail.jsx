@@ -7,6 +7,7 @@ const CourseDetail = ({ courseDetail }) => {
     const {_id, course_id, title, details, lession, student, duration, price, assessments, author, level, ratings, author_img_url, img_url } = courseDetail;
     return (
         
+        
         <div className="mt-10" > 
             <div className="card bg-base-100 w-80 h-80 shadow-xl mt-8">
                 <figure>
